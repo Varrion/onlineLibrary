@@ -10,6 +10,7 @@ public class Publisher {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private String info;
     private String address;
     private String url;
 
@@ -27,6 +28,14 @@ public class Publisher {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
     }
 
     public String getAddress() {

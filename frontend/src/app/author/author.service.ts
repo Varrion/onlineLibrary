@@ -6,8 +6,7 @@ import "rxjs/add/operator/take";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/bufferCount"
 
-import {Author} from "../shared/models/Author";
-import {error} from "selenium-webdriver";
+
 
 @Injectable()
 export class AuthorService {
@@ -16,7 +15,7 @@ export class AuthorService {
 
   }
 
-  public getAuthors(): Observable<Author[]> {
+  public getAuthors(): Observable<any> {
     return this.http.get("http://localhost:8080/authors/all")
       .map((response) => response)
 

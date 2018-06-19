@@ -11,6 +11,8 @@ public class Author {
 
     private String name;
 
+    private Integer age;
+
     private String description;
 
     private String country;
@@ -29,6 +31,14 @@ public class Author {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     public String getDescription() {

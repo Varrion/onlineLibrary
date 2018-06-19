@@ -11,9 +11,11 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    private String title;
 
     private String description;
+
+    private Integer pages;
 
     private Float price;
 
@@ -40,12 +42,12 @@ public class Book {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getDescription() {
@@ -54,6 +56,14 @@ public class Book {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Integer getPages() {
+        return pages;
+    }
+
+    public void setPages(Integer pages) {
+        this.pages = pages;
     }
 
     public Author getAuthor() {
@@ -104,8 +114,4 @@ public class Book {
         this.publisher = publisher;
     }
 
-    @Override
-    public String toString() {
-        return name;
-    }
 }

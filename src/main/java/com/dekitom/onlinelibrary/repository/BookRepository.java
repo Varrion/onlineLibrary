@@ -18,4 +18,6 @@ public interface BookRepository extends JpaRepository<Book,Long> {
     List<Book> findAll();
 
     List<Book> findByAuthorNameLike(String author);
+
+    void deleteById(Long id);
 }
