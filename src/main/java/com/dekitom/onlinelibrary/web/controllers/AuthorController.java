@@ -1,15 +1,12 @@
 package com.dekitom.onlinelibrary.web.controllers;
 
 import com.dekitom.onlinelibrary.model.Author;
+import com.dekitom.onlinelibrary.model.Category;
 import com.dekitom.onlinelibrary.service.AuthorService;
-import org.hibernate.validator.constraints.URL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,6 +22,11 @@ public class AuthorController {
     @GetMapping("/all")
     public Iterable<Author> getAuthors(){
         return authorService.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public Author getAuthor(@PathVariable Long id) {
+        return authorService.findOne(id);
     }
 
 }
