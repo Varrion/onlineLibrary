@@ -33,11 +33,4 @@ public class UserRole  {
         this.name = name;
     }
 
-/*
-    @Override
-    public String getAuthority() {
-        return name;
-    }
-*/
-
 }

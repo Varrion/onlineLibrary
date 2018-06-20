@@ -15,8 +15,6 @@ import java.util.Optional;
 @Service
 public class UserServiceImpl implements UserService {
 
-    //implements, UserDetailsService
-
     @Autowired
     private UserRepository userRepository;
 
@@ -45,9 +43,4 @@ public class UserServiceImpl implements UserService {
 
         return userRepository.findByUsername(username);
     }
-
-   /* @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return userRepository.findByUsername(username);
-    }*/
 }

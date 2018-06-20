@@ -29,13 +29,10 @@ public class User {
 
     private String email;
 
-    private Boolean active;
+    private Boolean isAdmin;
 
-    @ManyToOne
-    private Issue issue;
-
-    @ManyToOne
-    private UserRole role;
+  /*  @ManyToOne
+    private Issue issue;*/
 
     public Long getId() {
         return id;
@@ -81,7 +78,7 @@ public class User {
         return username;
     }
 
-    public Issue getIssue() {
+  /*  public Issue getIssue() {
         return issue;
     }
 
@@ -89,7 +86,7 @@ public class User {
         this.issue = issue;
     }
 
-   /* @Override
+    @Override
     public boolean isAccountNonExpired() {
         return false;
     }
@@ -134,19 +131,11 @@ public class User {
         this.surname = surname;
     }
 
-    public Boolean getActive() {
-        return active;
+    public Boolean getIsAdmin() {
+        return isAdmin;
     }
 
-    public void setActive(Boolean active) {
-        this.active = active;
-    }
-
-    public UserRole getRole() {
-        return role;
-    }
-
-    public void setRole(UserRole role) {
-        this.role = role;
+    public void setIsAdmin(Boolean isAdmin) {
+        this.isAdmin = isAdmin;
     }
 }

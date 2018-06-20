@@ -6,15 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping ("/admin")
+@RequestMapping("/register")
 /*@CrossOrigin (origins = "http://localhost:4200", allowedHeaders = "*")*/
 public class UserRestController {
 
     @Autowired
     private UserService userService;
 
-    @PostMapping("/add/user")
-    public User saveCategory(@RequestBody User user){
+    @PostMapping("/user")
+    public User registerUser(@RequestBody User user) {
         return this.userService.save(user);
     }
 }

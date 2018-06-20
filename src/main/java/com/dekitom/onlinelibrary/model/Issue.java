@@ -15,12 +15,12 @@ public class Issue {
     @ManyToOne
     private Book book;
 
-    @OneToMany(cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY,
-            mappedBy = "issue",
-            orphanRemoval = true)
-    private List<User> users = new ArrayList<>();
-
+    /*  @OneToMany(cascade = CascadeType.ALL,
+              fetch = FetchType.LAZY,
+              mappedBy = "issue",
+              orphanRemoval = true)
+      private List<User> users = new ArrayList<>();
+  */
     private Date takeDate;
 
     private Date returnDate;
@@ -67,11 +67,11 @@ public class Issue {
         this.description = description;
     }
 
-    public List<User> getUsers() {
+ /*   public List<User> getUsers() {
         return users;
     }
 
     public void setUsers(List<User> users) {
         this.users = users;
-    }
+    }*/
 }
