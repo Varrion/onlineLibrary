@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/categories")
 @CrossOrigin(origins = "*")
-public class CategoryViewController {
+public class CategoryController {
 
     @Autowired
     private CategoryService categoryService;

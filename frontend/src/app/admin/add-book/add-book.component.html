@@ -1,10 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<div class="form-group">
+  <label for="authorName">Title</label>
+  <input type="text" id="authorName"class="form-control"placeholder="Enter name" [(ngModel)]="bookTitle">
+</div>
+<div class="form-group">
+  <label for="title">Description</label>
+  <textarea  [(ngModel)]="bookDescription" rows="4" class="form-control" id="title"  placeholder="Description">
+    </textarea>
+</div>
+<div class="form-group">
+  <label for="bookPages">Pages</label>
+  <input type="number" id="bookPages" class="form-control"placeholder="Pages" [(ngModel)]="bookPages">
+</div>
+<div class="form-group">
+  <label for="bookPrice">Price</label>
+  <input type="number" id="bookPrice"class="form-control"placeholder="Pages" [(ngModel)]="bookPrice">
+</div>
+<div class="form-group">
+  <label for="bookStock">Stock</label>
+  <input type="number" id="bookStock"class="form-control"placeholder="Stock" [(ngModel)]="bookStock">
+</div>
+<div class="form-group">
+  <label for="authors">Authors</label>
+  <select [(ngModel)]="selectedAuthor" id="authors" class="form-control">
+    <option *ngFor="let author of authors"  [ngValue]="author">
+      {{author.name}}
+    </option>
+  </select>
+  <label for="categories">Categories</label>
+  <select [(ngModel)]="selectedCategory" id="categories" class="form-control">
+    <option *ngFor="let category of categories"  [ngValue]="category">
+      {{category.name}}
+    </option>
+  </select>
+  <label for="publishers">Publishers</label>
+  <select [(ngModel)]="selectedPublisher" id="publishers" class="form-control">
+    <option *ngFor="let publisher of publishers"  [ngValue]="publisher">
+      {{publisher.name}}
+    </option>
+  </select>
 
-</body>
-</html>
+</div>
+<button class="btn btn-primary" (click)="addBook()">Submit</button>

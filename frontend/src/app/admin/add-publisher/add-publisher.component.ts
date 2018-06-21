@@ -7,7 +7,7 @@ import {Publisher} from "../../shared/models/Publisher";
 @Component({
   selector:'add-publisher',
   templateUrl:'add-publisher.component.html',
-  providers:[AddPublisherComponent]
+  providers:[AddPublisherService]
 })
 
 export class AddPublisherComponent implements OnInit{
