@@ -19,6 +19,9 @@ import {PublisherComponent} from "./publisher/publisher.component";
 import {AddAuthorComponent} from "./admin/add-author/add-author.component";
 import {ToastrModule} from "ngx-toastr";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {AddPublisherComponent} from "./admin/add-publisher/add-publisher.component";
+import {AddCategoryComponent} from "./admin/add-category/add-category.component";
+import {AddBookComponent} from "./admin/add-book/add-book.component";
 
 
 
@@ -33,7 +36,10 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     RegisterComponent,
     LoginComponent,
     PublisherComponent,
-    AddAuthorComponent
+    AddAuthorComponent,
+    AddPublisherComponent,
+    AddCategoryComponent,
+    AddBookComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +59,10 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
       { path: 'register', component: RegisterComponent },
       { path: 'login', component: LoginComponent },
       { path: 'publisher/:name', component: PublisherComponent },
-      { path: 'admin/add-author', component: AddAuthorComponent}
+      { path: 'admin/add-author', component: AddAuthorComponent},
+      { path: 'admin/add-publisher', component: AddPublisherComponent},
+      { path: 'admin/add-category', component: AddCategoryComponent},
+      { path: 'admin/add-book', component: AddBookComponent},
     ])
   ],
   providers: [{ provide: LocationStrategy, useClass: PathLocationStrategy  }, /*AppService*/],

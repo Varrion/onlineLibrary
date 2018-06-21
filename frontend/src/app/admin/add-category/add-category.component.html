@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<div class="form-group">
+  <label for="categoryName">Category Name:</label>
+  <input type="text" [(ngModel)]="categoryName" class="form-control" id="categoryName" aria-describedby="categoryHelp" placeholder="genre">
+  <small id="categoryHelp" class="form-text text-muted">Insert new Category for the books.</small>
+</div>
+<button class="btn btn-primary" (click)="addCategory()">Submit</button>
