@@ -1,7 +1,16 @@
-<div *ngIf="author != null">
+<div class="card text-white bg-dark mb-3">
+  <div class="card-header">
+    <h3 class="title">Authors </h3>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let author of authors">
 
-  <ul *ngFor="let i of author">
-    <li> {{ i.name}}</li>
-  </ul>
-
+        <h3 class="text-md-center">{{author.name}}</h3>
+        <label class="label">Short Bio:</label><p><i>{{author.description}}</i></p>
+        <p>Country: {{author.country}}</p>
+      </div>
+    </div>
+  </div>
 </div>
+

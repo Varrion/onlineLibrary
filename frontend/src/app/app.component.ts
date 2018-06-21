@@ -11,13 +11,8 @@ import 'rxjs/add/operator/finally';
 })
 export class AppComponent implements OnInit {
 
-  public myDate : Date
-
   ngOnInit(): void {
-    setInterval(() => {         //replaced function() by ()=>
-      this.myDate = new Date();
-      console.log(this.myDate); // just testing if it is working
-    }, 1000);
+
   }
 
 

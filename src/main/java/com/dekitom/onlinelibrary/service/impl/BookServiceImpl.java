@@ -38,15 +38,6 @@ public class BookServiceImpl implements BookService {
         return bookRepository.save(book);
     }
 
-    @Override
-    public List<Book> findByCategoryId(Long id) {
-        return bookRepository.findByCategoryId(id);
-    }
-
-    @Override
-    public List<Book> findByAuthorNameLike(String name) {
-        return bookRepository.findByAuthorNameLike(name);
-    }
 
     /*@Override
     public void saveFile(Book book, MultipartFile file) {

@@ -7,7 +7,6 @@ import java.util.List;
 
 public interface BookService extends BaseEntityService<Book> {
 
-    List<Book> findByCategoryId(Long id);
-    List<Book> findByAuthorNameLike(String name);
+
     //public void saveFile(Book book, MultipartFile file);
 }

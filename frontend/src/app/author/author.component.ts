@@ -11,17 +11,15 @@ import {Author} from "../shared/models/Author";
 export class AuthorComponent implements OnInit{
 
 
-  public author:Author[];
+  public authors:Author[];
 
   constructor( private authorService: AuthorService){
   }
 
   ngOnInit(): void {
-    console.log("Se izvrsuva init");
     this.authorService.getAuthors()
       .subscribe((response) => {
-        this.author=response,
-        console.log("Authors: ", this.author);
+        this.authors=response
       });
 
   }

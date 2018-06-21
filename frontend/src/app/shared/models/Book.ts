@@ -6,9 +6,11 @@ export class Book {
 
   id: number;
 
-  name: String;
+  title: String;
 
   description: String;
+
+  pages: number;
 
   price: number;
 

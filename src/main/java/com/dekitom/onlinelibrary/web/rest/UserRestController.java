@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/register")
-/*@CrossOrigin (origins = "http://localhost:4200", allowedHeaders = "*")*/
+@CrossOrigin (origins = "http://localhost:4200", allowedHeaders = "*")
 public class UserRestController {
 
     @Autowired

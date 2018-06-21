@@ -1,9 +1,12 @@
 package com.dekitom.onlinelibrary.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 @Entity
 @Table (name="authors")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

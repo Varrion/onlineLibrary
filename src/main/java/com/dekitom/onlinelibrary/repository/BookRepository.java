@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public interface BookRepository extends JpaRepository<Book,Long> {
 
-    List<Book> findByCategoryId(Long id);
+    List<Book> findBooksByCategoryId(Long id);
 
     Optional<Book> findById(Long id);
 
@@ -17,7 +17,9 @@ public interface BookRepository extends JpaRepository<Book,Long> {
             attributePaths = {"category", "author"})
     List<Book> findAll();
 
-    List<Book> findByAuthorNameLike(String author);
+    List<Book> findBooksByAuthorId(Long id);
+
+    List<Book> findBooksByPublisherId(Long id);
 
     void deleteById(Long id);
 }

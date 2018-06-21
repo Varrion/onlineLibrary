@@ -1,0 +1,18 @@
+<div class="form-group">
+    <label for="authorName">Name</label>
+    <input type="text" id="authorName"class="form-control"placeholder="Enter name" [(ngModel)]="name">
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea  [(ngModel)]="description" rows="4" class="form-control" id="description"  placeholder="Description">
+    </textarea>
+  </div>
+  <div class="form-group">
+    <label for="countries">Country</label>
+    <select [(ngModel)]="selectedCountry" id="countries">
+      <option *ngFor="let country of countries">
+        {{country.name}}
+      </option>
+    </select>
+  </div>
+  <button class="btn btn-primary" (click)="addAuthor()">Submit</button>

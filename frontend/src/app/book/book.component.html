@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-hello world
-</body>
-</html>
+<div class="row">
+  <div class="col-md-3" *ngFor="let book of books">
+    <div class="card">
+      <div class="card-header"><h2>{{book.title}}</h2></div>
+      <div class="card-body">
+        <label class="label">Short Info:</label><p> <i>{{book.description}}</i></p>
+        <label class="label" style="padding-right: 5px">Price:</label><span style="color: #bb0000">{{book.price}} <i class="fa fa-money"></i></span>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><span>Author:</span>{{book.author.name}}</li>
+        <li class="list-group-item">Publisher: {{book.publisher.name}}</li>
+        <li class="list-group-item">Category: {{book.category.name}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+

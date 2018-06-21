@@ -4,6 +4,8 @@ export class Publisher {
 
   name: string;
 
+  info: string
+
   address: string;
 
   url: string;

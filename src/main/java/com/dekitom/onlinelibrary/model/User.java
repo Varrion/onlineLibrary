@@ -3,11 +3,14 @@ package com.dekitom.onlinelibrary.model;
 /*import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;*/
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
 @Table (name="users")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class User {
     //implements UserDetails
 

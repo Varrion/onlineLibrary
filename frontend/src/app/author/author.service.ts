@@ -18,7 +18,12 @@ export class AuthorService {
   public getAuthors(): Observable<any> {
     return this.http.get("http://localhost:8080/authors/all")
       .map((response) => response)
+  }
 
+  public getBooksbyAuthor ( id: number ): Observable <any> {
+    return this.http.get(`http://localhost:8080/books/by-author/${id}`)
+      .map((response) => response)
   }
-  }
+
+}
 

@@ -18,9 +18,9 @@ export class User {
 
   email: string;
 
-  active: boolean;
+  isAdmin: boolean;
 
-  issue: Issue;
+/*  issue: Issue;
 
-  role: UserRole;
+  role: UserRole;*/
 }

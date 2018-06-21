@@ -8,7 +8,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" routerLink="/">Home</a>
+            <a class="nav-link" routerLink="/"> <i class="fa fa-home"></i></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/about-us" routerLinkActive="active">About Us</a>
@@ -21,18 +21,22 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="/authors" routerLinkActive="active">Authors</a>
           </li>
+          <li>
+            <a class="nav-link" routerLink="/admin/add-author" routerLinkActive="active">Add Author</a>
+          </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search" aria-hidden="true"></i>
           </button>
         </form>
-        <p style="color: white; font-style: normal">{{ myDate | date: 'HH:mm:ss' }}</p>
+        <a class="nav-link" routerLink="/register" routerLinkActive="active">Register</a> <span style="color: gray">/</span>
+        <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
       </div>
     </nav>
     <br>
  </div>
- <div class="container" style=" margin-bottom: 175px; margin-top: 76px;">
+ <div class="container" style="margin-top: 76px;">
    <router-outlet ></router-outlet>
  </div>
 
