@@ -1,6 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {BookService} from "./book.service";
 import {Book} from "../shared/models/Book";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'books',
@@ -12,7 +13,7 @@ export class BookComponent implements OnInit{
 
   public books: Book[];
 
-  constructor (private bookService: BookService){}
+  constructor (private bookService: BookService , private router: Router){}
 
   ngOnInit(): void {
 
@@ -20,6 +21,10 @@ export class BookComponent implements OnInit{
       .subscribe( (value : Book[]) => {
         this.books = value;
       })
+  }
+
+  bookDetails(book){
+    this.router.navigate([`book/${book.title}`], {queryParams: {id: book.id}});
   }
 
 

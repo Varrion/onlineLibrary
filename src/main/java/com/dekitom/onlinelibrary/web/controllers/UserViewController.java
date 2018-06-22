@@ -8,7 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/login")
+@RequestMapping("/users")
+@CrossOrigin (origins = "http://localhost:4200", allowedHeaders = "*")
 public class UserViewController {
 
     @Autowired
@@ -17,9 +18,14 @@ public class UserViewController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("/user")
+    @GetMapping("/all")
+    public Iterable<User> findAllUsers(){
+        return userService.findAll();
+    }
+
+    @PostMapping("/login")
     public User findUserbyCredentials (@RequestParam String username, @RequestParam String password){
-        return userRepository.findUserByCredentials(username, password);
+        return userRepository.findUserByUsernameAndPassword(username, password);
     }
 
 }

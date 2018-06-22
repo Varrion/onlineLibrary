@@ -7,6 +7,5 @@ import java.util.List;
 
 public interface BookService extends BaseEntityService<Book> {
 
-
     //public void saveFile(Book book, MultipartFile file);
 }

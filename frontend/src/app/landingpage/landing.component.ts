@@ -23,12 +23,10 @@ export  class LandingComponent implements OnInit{
     this.landingService.getPublishers()
       .subscribe((response) => {
         this.publishers = response;
-        console.log("Publishers: ", this.publishers);
       })
     this.landingService.getCategories()
       .subscribe((response) => {
         this.categories = response;
-        console.log("Categories: ", this.categories);
       })
   }
 

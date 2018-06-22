@@ -32,4 +32,8 @@ export class CategoryComponent implements OnInit {
       });
 
   }
+
+  openBook(book){
+    this.router.navigate([`book/${book.title}`], {queryParams: {id: book.id}});
+  }
 }

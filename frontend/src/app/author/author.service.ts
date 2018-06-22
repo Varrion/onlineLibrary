@@ -20,9 +20,11 @@ export class AuthorService {
       .map((response) => response)
   }
 
-  public getBooksbyAuthor ( id: number ): Observable <any> {
-    return this.http.get(`http://localhost:8080/books/by-author/${id}`)
-      .map((response) => response)
+
+
+  public getAuthor(id):Observable<any>{
+    return this.http.get(`http://localhost:8080/authors/${id}`)
+      .map ((response)=> response);
   }
 
 }

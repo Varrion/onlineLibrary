@@ -1,7 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {PublisherService} from "./publisher.service";
 import {Publisher} from "../shared/models/Publisher";
-import {ActivatedRoute, Params, Route} from "@angular/router";
+import {ActivatedRoute, Params, Route, Router} from "@angular/router";
 import {Book} from "../shared/models/Book";
 import {LandingService} from "../landingpage/landing.service";
 
@@ -15,7 +15,7 @@ export class PublisherComponent implements OnInit {
   public publisherId;
   public publisher:Publisher;
   public books: Book[];
-  constructor (private route: ActivatedRoute, private publisherService: PublisherService, private landingService: LandingService){}
+  constructor (private route: ActivatedRoute,private router:Router, private publisherService: PublisherService, private landingService: LandingService){}
 
   ngOnInit() {
 
@@ -35,7 +35,10 @@ export class PublisherComponent implements OnInit {
               })
           })
       });
+  }
 
+  public openBook(book){
+    this.router.navigate([`book/${book.title}`], {queryParams: {id: book.id}});
   }
 
 }

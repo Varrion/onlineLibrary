@@ -22,6 +22,9 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {AddPublisherComponent} from "./admin/add-publisher/add-publisher.component";
 import {AddCategoryComponent} from "./admin/add-category/add-category.component";
 import {AddBookComponent} from "./admin/add-book/add-book.component";
+import {AppService} from "./app.service";
+import {BookDetailsComponent} from "./book/details/book-details.component";
+import {AuthorDetailsComponent} from "./author/details/author-details.component";
 
 
 
@@ -39,7 +42,9 @@ import {AddBookComponent} from "./admin/add-book/add-book.component";
     AddAuthorComponent,
     AddPublisherComponent,
     AddCategoryComponent,
-    AddBookComponent
+    AddBookComponent,
+    BookDetailsComponent,
+    AuthorDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -63,9 +68,11 @@ import {AddBookComponent} from "./admin/add-book/add-book.component";
       { path: 'admin/add-publisher', component: AddPublisherComponent},
       { path: 'admin/add-category', component: AddCategoryComponent},
       { path: 'admin/add-book', component: AddBookComponent},
+      { path: 'book/:name', component: BookDetailsComponent },
+      { path: 'author/:name', component: AuthorDetailsComponent}
     ])
   ],
-  providers: [{ provide: LocationStrategy, useClass: PathLocationStrategy  }, /*AppService*/],
+  providers: [ AppService, { provide: LocationStrategy, useClass: PathLocationStrategy  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

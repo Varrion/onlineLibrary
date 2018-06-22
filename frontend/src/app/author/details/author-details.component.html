@@ -1,0 +1,21 @@
+<div class="jumbotron justify-content-around" *ngIf="author != null">
+  <h1>Author {{author.name}}</h1>
+  <label class="label">Informations: </label><p>{{author.description}}</p>
+  <label class="label">Country: </label> <p>{{author.country}}</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dapibus ut lacus a egestas. Praesent turpis
+    erat,
+    dictum vel aliquam aliquet, sollicitudin in velit. Vestibulum malesuada metus urna, varius fringilla mauris
+    aliquam non. Ut mollis in diam ac blandit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dapibus ut lacus a egestas. Praesent turpis
+    erat,
+    dictum vel aliquam aliquet, sollicitudin in velit. Vestibulum malesuada metus urna, varius fringilla mauris
+    aliquam non. Ut mollis in diam ac blandit</p>
+</div>
+<h2 class="pb-2 mt-4 mb-2 border-bottom text-center">Books of this Author: </h2>
+<div class="row">
+  <div class="col-md-3" *ngFor="let book of books ">
+    <div class="jumbotron">
+      <h2 (click)="openBook(book)">{{book.title}}</h2>
+      <p>{{book.description}}</p>
+    </div>
+  </div>
+</div>
