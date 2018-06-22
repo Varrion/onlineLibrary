@@ -9,15 +9,15 @@ export class BookDetailsService {
   constructor (private http: HttpClient){}
 
   public bookDetails( id:number ):Observable<any>{
-    return this.http.get(`http://localhost:8080/books/${id}`)
+    return this.http.get(`http://localhost:8090/books/${id}`)
       .map ((response)=> response);
   }
 
   public deleteBook( id:number): Observable<any>{
-    return this.http.delete(`http://localhost:8080/admin/delete/book/${id}`)
+    return this.http.delete(`http://localhost:8090/admin/delete/book/${id}`)
   }
 
   public updateBook (id:number, book:Book): Observable<any>{
-    return this.http.delete(`http://localhost:8080/admin/edit/book/${id}`)
+    return this.http.delete(`http://localhost:8090/admin/edit/book/${id}`)
   }
 }

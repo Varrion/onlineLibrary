@@ -36,6 +36,21 @@ public class BookServiceImpl implements BookService {
         return bookRepository.save(book);
     }
 
+    @Override
+    public void updateBook(Book book) {
+        Book b = findOne(book.getId());
+        b.setTitle(book.getTitle());
+        b.setPages(book.getPages());
+        b.setDescription(book.getDescription());
+        b.setPrice(book.getPrice());
+        b.setStock(book.getStock());
+        b.setAuthor(book.getAuthor());
+        b.setPublisher(book.getPublisher());
+        b.setCategory(book.getCategory());
+
+        save(b);
+    }
+
 
 
     /*@Override

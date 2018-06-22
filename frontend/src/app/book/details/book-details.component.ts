@@ -20,7 +20,12 @@ export class BookDetailsComponent implements OnInit{
 
   public bookId;
   public book:Book;
-  public newTitle;
+  public copyBook;
+  public title;
+  public description;
+  public pages;
+  public price;
+  public stock;
 
   ngOnInit(): void {
     this.route.queryParams
@@ -31,6 +36,14 @@ export class BookDetailsComponent implements OnInit{
           .subscribe((value:Book) => {
             this.book = value;
             console.log("Book: ", this.book);
+            this.copyBook = Object.assign({}, this.book);
+
+            this.title = this.book.title;
+            this.description = this.book.description;
+            this.pages = this.book.pages;
+            this.price = this.book.price;
+            this.stock = this.book.stock;
+
           })
       });
   }
@@ -60,11 +73,19 @@ export class BookDetailsComponent implements OnInit{
       })
   }
 
-  editBook(bookId, book:Book){
+  editBook(){
 
-    this.bookDetailsService.updateBook(bookId, book)
+    this.copyBook.title = this.title;
+    this.copyBook.description = this.description;
+    this.copyBook.pages = this.pages;
+    this.copyBook.price = this.price;
+    this.copyBook.stock = this.stock;
+
+    this.bookDetailsService.updateBook(this.copyBook.id, this.copyBook)
       .subscribe(()=>{
         this.toastr.info("Book was succesfully updates")
+        this.router.navigate(['/']);
+
       })
   }
 

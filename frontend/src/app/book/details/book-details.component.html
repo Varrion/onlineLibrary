@@ -15,38 +15,37 @@
   <button class="btn btn-danger pull-right" (click)="deleteBook(book.id)">Delete book </button>
 
 
- <!-- &lt;!&ndash; Button to Open the Modal &ndash;&gt;
+  <!-- Button to Open the Modal -->
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-    Open modal
+    Edit Book Details
   </button>
 
-  &lt;!&ndash; The Modal &ndash;&gt;
-  <div class="modal" id="myModal">
+  <!-- Modal -->
+  <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
+
+      <!-- Modal content-->
       <div class="modal-content">
-
-        &lt;!&ndash; Modal Header &ndash;&gt;
         <div class="modal-header">
-          <h4 class="modal-title">Modal Heading</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
         </div>
-
-        &lt;!&ndash; Modal body &ndash;&gt;
         <div class="modal-body">
-          <input type="text" [(ngModel)]="newTitle" [value]="book.title">
+          <label>Title: </label> <input type="text" class="form-control" [(ngModel)]="title" [value]="book.title">
+          <label>Description: </label><input type="text" class="form-control" [(ngModel)]="description" [value]="book.description">
+          <label>Pages: </label><input type="number" class="form-control" [(ngModel)]="pages" [value]="book.pages">
+          <label>Price: </label><input type="number"  class="form-control" [(ngModel)]="price" [value]="book.price">
+          <label>Stock: </label><input type="number"  class="form-control" [(ngModel)]="stock" [value]="book.stock">
         </div>
-
-        &lt;!&ndash; Modal footer &ndash;&gt;
         <div class="modal-footer">
-
-          <button type="button" class="btn btn-success" data-dismiss="modal" (click)="editBook(book.id, book)">Edit Book</button>
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success" (click)="editBook()">Edit Book</button>
         </div>
-
       </div>
+
     </div>
-  </div>-->
+  </div>
+
 </div>
 
 <h2 class="pb-2 mt-4 mb-2 border-bottom text-center">More Info </h2>
@@ -66,4 +65,3 @@
     </div>
   </div>
 </div>
-

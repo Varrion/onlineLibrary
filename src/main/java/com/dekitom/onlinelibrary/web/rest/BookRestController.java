@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/admin")
-@CrossOrigin (origins = "*")
+@CrossOrigin (origins = "*" )
 public class BookRestController {
 
     @Autowired
@@ -27,8 +27,8 @@ public class BookRestController {
         bookRepository.deleteById(id);
     }
 
-/*    @PutMapping("/edit/book/{id}")
-    public void editBook(@PathVariable Long id, @RequestBody Book book){
-        this.bookService.updateBook(id,book);
-    }*/
+    @PostMapping("/edit/book/{id}")
+    public void editBook (@PathVariable Long id, @RequestBody Book book){
+        this.bookService.updateBook(book);
+    }
 }
